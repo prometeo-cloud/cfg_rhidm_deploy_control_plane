@@ -1,0 +1,14 @@
+---
+host_type: "docker"
+host_group: "managed"
+
+host_list:
+  rhidm:
+    name: "rhidm"
+    ports: "12345"
+
+tst_image: "registry.access.redhat.com/rhel7:latest"
+
+dkr_container: "{{ tst_container }}"
+dkr_image: "{{ tst_image }}"
+dkr_hostname: "{{ tst_container }}"

@@ -1,0 +1,9 @@
+---
+- name: docker_manage_hosts
+  src: https://github.com/prometeo-cloud/docker_manage_hosts
+
+- name: rhidm_install_application
+  src: https://github.com/prometeo-cloud/rhidm_install_application
+
+- name: rhidm_configure_control_plane
+  src: https://github.com/prometeo-cloud/rhidm_configure_control_plane

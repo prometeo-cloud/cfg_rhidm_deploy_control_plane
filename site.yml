@@ -1,0 +1,19 @@
+---
+- name: Start Managed Hosts
+  hosts: localhost
+  roles:
+    - {role: docker_manage_hosts, taskname: "start_host", when: host_type == "docker"}
+#    - {role: vagrant_manage_hosts, taskname: "start_host", when: host_type == "vagrant"}
+
+- name: Testing Configuration...
+  hosts: managed
+  connection: "{{ host_type }}"
+  roles:
+    - rhidm_install_application
+    - rhidm_configure_control_plane
+
+- name: Delete Docker container
+  hosts: localhost
+  roles:
+    - {role: docker_manage_hosts, taskname: "delete_host"}
+...
